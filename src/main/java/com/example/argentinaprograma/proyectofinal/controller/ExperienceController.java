@@ -24,7 +24,6 @@ public class ExperienceController {
     @Autowired
     private ExperienceService experienceService;
     
-    @CrossOrigin(origins = {"http://localhost:4200", "https://argentinaprograma-58a08.web.app"})
     @GetMapping("/traer")
     public List<Experience> getExp(){
         return experienceService.traer();

@@ -23,7 +23,6 @@ public class ProfileController {
     @Autowired
     private ProfileService profileService;
     
-    @CrossOrigin(origins = {"http://localhost:4200", "https://argentinaprograma-58a08.web.app"})
     @GetMapping("/traer")
     public List<Profile> getProfile(){
         return profileService.traer();

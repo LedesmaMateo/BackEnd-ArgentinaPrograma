@@ -25,7 +25,7 @@ public class AuthController {
     @Autowired
     private JwtTokenProvider jwtTokenProvider;
     
-    
+    @CrossOrigin(origins = {"http://localhost:4200", "https://argentinaprograma-58a08.web.app"})
     @PostMapping("/login")
     public ResponseEntity<JwtAuthResponseDto> authenticateUser(@RequestBody Login login) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(login.getUsernameOrEmail(), login.getPassword()));
