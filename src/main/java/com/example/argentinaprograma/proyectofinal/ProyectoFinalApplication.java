@@ -18,7 +18,7 @@ public class ProyectoFinalApplication {
         return new WebMvcConfigurer(){
             @Override
             public void addCorsMappings(CorsRegistry registry){
-                registry.addMapping("/**").allowedOrigins("https://argentinaprograma-58a08.web.ap").allowedMethods("*").allowedHeaders("*");
+                registry.addMapping("/**").allowedOrigins("https://argentinaprograma-58a08.web.app").allowedMethods("*").allowedHeaders("*");
             }
         };
     }
