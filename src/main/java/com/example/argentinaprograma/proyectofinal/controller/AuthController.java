@@ -18,14 +18,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/auth")
+@CrossOrigin(origins = {"http://localhost:4200", "https://argentinaprograma-58a08.web.app"})
 public class AuthController {
     @Autowired
     private AuthenticationManager authenticationManager;
     
     @Autowired
     private JwtTokenProvider jwtTokenProvider;
-    
-    @CrossOrigin(origins = {"http://localhost:4200", "https://argentinaprograma-58a08.web.app"})
+
     @PostMapping("/login")
     public ResponseEntity<JwtAuthResponseDto> authenticateUser(@RequestBody Login login) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(login.getUsernameOrEmail(), login.getPassword()));
