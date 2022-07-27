@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/profile")
-@CrossOrigin(origins = {"http://localhost:4200", "https://argentinaprograma-58a08.web.app"})
 public class ProfileController {
     @Autowired
     private ProfileService profileService;
