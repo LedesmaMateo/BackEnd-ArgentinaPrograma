@@ -19,6 +19,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
@@ -67,6 +69,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception{
         return super.authenticationManagerBean();
+    }
+    
+    @Bean
+        public WebMvcConfigurer getCorsConfiguration(){
+        return new WebMvcConfigurer(){
+            @Override
+            public void addCorsMappings(CorsRegistry registry){
+                registry.addMapping("/**")
+                        .allowedOrigins("https://argentinaprograma-58a08.web.app")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                        .allowedHeaders("*");
+            }
+        };
     }
     
 }
