@@ -22,6 +22,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -71,13 +72,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
     
-    @Bean
-    public WebMvcConfigurer getCorsConfiguration(){
-        return new WebMvcConfigurer(){
-            @Override
-            public void addCorsMappings(CorsRegistry registry){
-                registry.addMapping("/api/**").allowedOrigins("https://argentinaprograma-58a08.web.ap");
-            }
-        };
-    }
 }
