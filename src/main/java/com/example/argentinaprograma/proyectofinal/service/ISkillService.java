@@ -8,4 +8,6 @@ public interface ISkillService {
     public List<Skill> traer();
     
     public void guardar(Skill skill);
+    
+    public void borrar(Long id);
 }

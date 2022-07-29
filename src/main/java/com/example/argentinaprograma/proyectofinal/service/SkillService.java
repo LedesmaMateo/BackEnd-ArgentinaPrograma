@@ -21,5 +21,10 @@ public class SkillService implements ISkillService{
     public void guardar(Skill skill) {
         skillRepository.save(skill);
     }
+
+    @Override
+    public void borrar(Long id) {
+        skillRepository.deleteById(id);
+    }
     
 }
